@@ -1,0 +1,56 @@
+{
+  "medicines": [
+    {
+      "id": 1,
+      "name": "Paracetamol 500 mg",
+      "category": "Obat bebas",
+      "unit": "Strip",
+      "price": 12000,
+      "stock": 51,
+      "minStock": 10,
+      "expiry": "2027-12-31"
+    },
+    {
+      "id": 2,
+      "name": "Vitamin C 500 mg",
+      "category": "Vitamin",
+      "unit": "Botol",
+      "price": 25000,
+      "stock": 30,
+      "minStock": 10,
+      "expiry": "2027-10-31"
+    },
+    {
+      "id": 3,
+      "name": "Antasida",
+      "category": "Obat bebas",
+      "unit": "Strip",
+      "price": 8000,
+      "stock": 5,
+      "minStock": 10,
+      "expiry": "2027-08-31"
+    },
+    {
+      "id": 4,
+      "name": "Antibiotik",
+      "category": "Obat",
+      "unit": "3",
+      "price": 17,
+      "stock": 5,
+      "minStock": 7,
+      "expiry": "2026-12-30"
+    }
+  ],
+  "purchases": [
+    {
+      "id": 1,
+      "medicineId": 1,
+      "medicineName": "Paracetamol 500 mg",
+      "quantity": 1,
+      "supplier": "Obat",
+      "price": 12000,
+      "total": 12000,
+      "date": "2026-11-25T15:54:04.813Z"
+    }
+  ]
+}

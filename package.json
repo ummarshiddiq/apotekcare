@@ -1,0 +1,16 @@
+{
+  "name": "apotekcare",
+  "version": "1.0.0",
+  "description": "Aplikasi manajemen stok dan pembelian obat apotek",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^5.3.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

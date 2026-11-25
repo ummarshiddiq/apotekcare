@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApotekCare - Dashboard Apotek</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>ApotekCare</h2>
+    <p class="subtitle">Pharmacy Management</p>
+
+    <nav>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#medicines">Data Obat</a>
+        <a href="#purchases">Pembelian Obat</a>
+        <a href="#history">Riwayat Pembelian</a>
+    </nav>
+
+    <p class="sidebar-footer">ApotekCare v1.0</p>
+</div>
+
+<main>
+    <header>
+        <div>
+            <h1>Dashboard Apotek</h1>
+            <p>Selamat datang di sistem manajemen ApotekCare.</p>
+        </div>
+        <span class="status">● Sistem Aktif</span>
+    </header>
+
+    <section id="dashboard">
+        <h2>Ringkasan Apotek</h2>
+
+        <div class="cards">
+            <div class="card">
+                <p>Total Jenis Obat</p>
+                <h2 id="totalMedicines">0</h2>
+            </div>
+
+            <div class="card">
+                <p>Total Stok Obat</p>
+                <h2 id="totalStock">0</h2>
+            </div>
+
+            <div class="card">
+                <p>Stok Menipis</p>
+                <h2 id="lowStock">0</h2>
+            </div>
+
+            <div class="card">
+                <p>Total Transaksi</p>
+                <h2 id="totalTransactions">0</h2>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h3>Daftar Obat dengan Stok Menipis</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nama Obat</th>
+                            <th>Stok</th>
+                            <th>Minimal Stok</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lowStockTable"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="medicines">
+        <div class="section-heading">
+            <h2>Manajemen Data Obat</h2>
+        </div>
+
+        <div class="panel">
+            <h3>Tambah / Edit Obat</h3>
+
+            <form id="medicineForm">
+                <input type="hidden" id="medicineId">
+
+                <div class="form-grid">
+                    <input id="name" placeholder="Nama obat" required>
+                    <input id="category" placeholder="Kategori obat" required>
+                    <input id="unit" placeholder="Satuan (Strip/Botol)" required>
+                    <input id="price" type="number" min="0" placeholder="Harga satuan" required>
+                    <input id="stock" type="number" min="0" placeholder="Jumlah stok" required>
+                    <input id="minStock" type="number" min="0" placeholder="Minimal stok" required>
+                    <label>
+                        Tanggal kedaluwarsa
+                        <input id="expiry" type="date" required>
+                    </label>
+                </div>
+
+                <button type="submit" id="medicineSubmit">
+                    Simpan Data Obat
+                </button>
+
+                <button type="button" class="secondary" id="cancelEdit">
+                    Batal Edit
+                </button>
+            </form>
+        </div>
+
+        <div class="panel">
+            <h3>Daftar Obat</h3>
+            <input id="searchMedicine" placeholder="Cari nama obat...">
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Kategori</th>
+                            <th>Harga</th>
+                            <th>Stok</th>
+                            <th>Kedaluwarsa</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="medicineTable"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="purchases">
+        <h2>Pembelian Obat dari Supplier</h2>
+
+        <div class="panel">
+            <form id="purchaseForm">
+                <label>Nama obat</label>
+                <select id="purchaseMedicine" required>
+                    <option value="">Pilih obat</option>
+                </select>
+
+                <label>Nama supplier</label>
+                <input id="supplier" placeholder="Nama supplier" required>
+
+                <label>Jumlah pembelian</label>
+                <input id="quantity" type="number" min="1" placeholder="Masukkan jumlah" required>
+
+                <button type="submit">Simpan Pembelian</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="history">
+        <h2>Riwayat Pembelian Obat</h2>
+
+        <div class="panel table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tanggal</th>
+                        <th>Nama Obat</th>
+                        <th>Supplier</th>
+                        <th>Jumlah</th>
+                        <th>Total Harga</th>
+                    </tr>
+                </thead>
+                <tbody id="purchaseTable"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer>
+        <p>©2026 ApotekCare - Sistem Manajemen Apotek</p>
+    </footer>
+</main>
+
+<div id="toast" role="status"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
